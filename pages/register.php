@@ -1,8 +1,6 @@
 <?php
 
-/*
- * Página de registo - Deve permitir adicionar um novo utilizador à página
- */
+
 
 require("../database/connectDatabase.php");
 
@@ -78,14 +76,15 @@ require("../database/connectDatabase.php");
                         if( isset($_POST["form-username"]) && isset($_POST["form-email"]) && isset($_POST["form-contact"]) && isset($_POST["form-password"]) && isset($_POST["form-confirm-password"])
                         && isset($_POST["form-card-number"])  && isset($_POST["form-card-name"])  && isset($_POST["form-card-csv"])  && isset($_POST["form-card-expiration"])
                         ){
-                             ?>
+
                             //COMPLETAR -> Dá erro caso a password não seja igual a Confirmação da password  MOSTRAR A MSG
+
                             /*
                                 <div class="alert alert-warning" role="alert">
                                     The password and confirm password didn't match
                                 </div>
                             */
-
+                            ?>
                             <?php
 
                                 //Query para inserir o cartao e obter o id desse cartao
