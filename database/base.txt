@@ -1,0 +1,36 @@
+CREATE TABLE Card (
+	id int primary key auto_increment,
+	name varchar(100) unique not null,
+    expirationDate varchar(10)  not null,
+    csv int not null,
+    code varchar(100) unique not null
+);
+
+CREATE TABLE User (
+	id int primary key auto_increment,
+    name varchar(100) unique not null,
+    email varchar(100) unique not null,
+    contact varchar(20) unique not null,
+    password varchar(100)  not null,
+    card_id int not null unique
+);
+
+CREATE TABLE Contact(
+    id int primary key auto_increment,
+	id_user int NOT NULL,
+    id_friend int NOT NULL
+);
+
+
+CREATE TABLE Transaction (
+  id int primary key auto_increment,
+  value double NOT NULL,
+  id_contact int NOT NULL,
+  createdAt datetime default NOW()
+);
+
+ALTER TABLE User ADD FOREIGN KEY (card_id) references Card(id);
+ALTER TABLE Contact ADD FOREIGN KEY (id_user) references User(id);
+ALTER TABLE Contact ADD FOREIGN KEY (id_friend) references User(id);
+ALTER TABLE Transaction ADD FOREIGN KEY (id_contact) references Contact(id);
+
