@@ -3,12 +3,11 @@
 /*
  * Página de login - Deve permitir ir para o index.php
  */
-require("../database/connectDatabase.php");
+require $_SERVER['DOCUMENT_ROOT'] . '/database/connectDatabase.php';
 
 session_start();
-
 if (isset($_SESSION["id"])) {
-   // header("Location: /pages/topup.php");
+    header("Location: /pages/topup.php");
 }
 
 ?>
@@ -81,7 +80,7 @@ if (isset($_SESSION["id"])) {
                     <?php
 
                     if (isset($_POST["form-username"]) && isset($_POST["form-password"])) {
-
+                        //AP  Faz ligacao SQL  e  procura utilizador com os valores dos campos para a procura
 
                         // COMPLETAR ... PROCURAR NA BASE DE DADOS -> POR UM USER COM O EMAIL E PASSWORD COLOCADOS NO FORM
                         // COLOCAR NA VARIAVEL O RESULTADO DA BASE DE DADOS
@@ -91,7 +90,6 @@ if (isset($_SESSION["id"])) {
                         //ERRO NA BASE DE DADOS
                         if (mysqli_error($conn)) {
                             ?>
-
                             <div class="alert alert-danger" role="alert">
                                 User or password invalid
                             </div>

@@ -1,8 +1,10 @@
 <?php
 
+/*
+ * Página de registo - Deve permitir adicionar um novo utilizador à página
+ */
 
-
-require("../database/connectDatabase.php");
+require $_SERVER['DOCUMENT_ROOT'] . '/database/connectDatabase.php';
 
 ?>
     <!DOCTYPE html>
