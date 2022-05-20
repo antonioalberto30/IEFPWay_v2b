@@ -85,9 +85,14 @@ if (isset($_SESSION["id"])) {
                         // COMPLETAR ... PROCURAR NA BASE DE DADOS -> POR UM USER COM O EMAIL E PASSWORD COLOCADOS NO FORM
                         // COLOCAR NA VARIAVEL O RESULTADO DA BASE DE DADOS
 
-                        $result = null;
+                        $sql = $conn->prepare("SELECT * FROM User WHERE email = ? AND password = ?");
+                        $sql->bind_param("ss", $_POST["form-username"], $_POST["form-password"]);
+                        $sql->execute();
+                        $result = $sql->get_result();
 
                         //ERRO NA BASE DE DADOS
+
+
                         if (mysqli_error($conn)) {
                             ?>
                             <div class="alert alert-danger" role="alert">

@@ -1,8 +1,8 @@
 <?php
 $servername = "127.0.0.1";
 $username = "root";
-$password = "teste";
-$dbname = "iefpway";
+$password = "";
+$dbname = "IEFPWay";
 // Create connection
 $conn = new mysqli($servername, $username, $password,$dbname);
 // Check connection
