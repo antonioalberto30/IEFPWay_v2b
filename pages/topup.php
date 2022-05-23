@@ -127,8 +127,6 @@ session_start();
 
                                 }
 
-
-
                                 generateCard($result["name"], $result["expirationDate"], $result["card_code"]);
                                 ?>
 
