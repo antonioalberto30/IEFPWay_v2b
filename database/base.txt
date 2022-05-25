@@ -5,7 +5,6 @@ CREATE TABLE Card (
     csv int not null,
     code varchar(100) unique not null
 );
-
 CREATE TABLE User (
 	id int PRIMARY KEY AUTO_INCREMENT,
     name varchar(100) NOT NULL,

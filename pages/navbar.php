@@ -7,7 +7,6 @@
         overflow: hidden;
         background-color: #333;
     }
-
     .navigationbar li {
         float: left;
     }
